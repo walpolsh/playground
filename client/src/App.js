@@ -20,25 +20,11 @@ class App extends Component {
     if (response.status !== 200) throw Error(body.message);
     return body;
   };
-  handleSubmit = async e => {
-    e.preventDefault();
-    const response = await fetch('/api/world', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ post: this.state.post }),
-    });
-    const body = await response.text();
-    this.setState({ responseToPost: body });
-  };
-
   render() {
-    console.log(this.state.response)
     return (
       <div className="App">
         <p>{this.state.response}</p>
-
+        <Playground />
       </div>
     );
   }
