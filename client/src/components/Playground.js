@@ -4,15 +4,12 @@ const bar = (x = 1) => {
   return x + x
 }
 
-const foo = (x = bar(42), y = bar()) => {
-  return x
+function foo (x = 1, ...args) {
+  return bar(...args) + x
 }
 
-console.log(foo(10))
-
 const Playground = (props) => <div>
-  <p>lololol</p>
+  <div>{foo(5)}</div>
   <div>{foo()}</div>
-  <div>{foo(25)}</div>
 </div>
 export default Playground
