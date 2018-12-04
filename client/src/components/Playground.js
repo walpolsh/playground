@@ -1,6 +1,10 @@
 import React from 'react';
 
-const foo = (x = 42) => {
+const bar = (x = 1) => {
+  return x + x
+}
+
+const foo = (x = bar(42), y = bar()) => {
   return x
 }
 
