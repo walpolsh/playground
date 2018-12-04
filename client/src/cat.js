@@ -1,5 +1,4 @@
 var concat = require('concat-stream')
-//Writable stream that concatenates all the data from a stream and calls a callback with the result. Use this when you want to collect all the data from a stream into a single buffer.
 var http = require('http')
 var qs = require('querystring')
 var through = require ('through2')
