@@ -3,7 +3,6 @@ import React from 'react';
 const x = [1,2,3]
 const y = [4,5]
 
-
 const bar = (x = 1) => {
   return x + x
 }
@@ -23,7 +22,28 @@ function bar1 () {
   return foo1(...a,...b)
 }
 
-console.log(bar1().join(''))
+const nums = [10,5,3,8,2,6,4,7,9,1];
+
+const bubbleSort = nums => {
+  do {
+    var swapped = false;
+    for (let i = 0; i < nums.length; i++) {
+      if (nums[i] > nums[i+1]) {
+        const temp = nums[i]
+        nums[i] = nums[i+1]
+        nums[i+1] = temp
+        swapped = true;
+      }
+    }
+  } while(swapped);
+  return nums
+}
+
+console.log(bubbleSort(nums))
+
+
+
+
 const Playground = (props) => <div>
   <div>{foo(5)}</div>
   <div>{foo()}</div>
@@ -33,6 +53,16 @@ const Playground = (props) => <div>
     {
       bar1().join('') === '281012' ? 'true' : 'false'
     }
+  </div>
+  <div>
+    <div>Original nums: [10,5,3,8,2,6,4,7,9,1]</div>
+    <div>bubbleSort nums:</div>
+    <div>
+      {
+        bubbleSort(nums)
+      }
+
+    </div>
   </div>
 </div>
 export default Playground
