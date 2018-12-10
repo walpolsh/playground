@@ -11,11 +11,27 @@ function foo (x = 1, ...args) {
   return bar(...args) + x
 }
 
+function waterfall (max, current) {
+  if (max <= current) return;
+  console.log('***'.repeat(current)) 
+  waterfall(max, current+1);
+}
+
+waterfall(20,1)
+
 function fibonacci(n) {
   return n <= 2 ? 1 : fibonacci(n - 1) + fibonacci(n - 2)
 };
 
 let arr = []
+
+function factoral (n) {
+  if (n < 2) return 1;
+  console.log(`${n} * ${n - 1}`) 
+  return n * factoral(n - 1)
+}
+
+console.log(`Factoral: ${factoral(5)}`)
 
 function fibArray(n) {
   arr.push(n <= 2 ? 1 : fibonacci(n - 1) + fibonacci(n - 2))
