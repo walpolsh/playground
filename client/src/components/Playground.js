@@ -15,10 +15,18 @@ function fibonacci(n) {
   return n <= 2 ? 1 : fibonacci(n - 1) + fibonacci(n - 2)
 };
 
-for (let i = 1 ; i < 20; i++) {
+let arr = []
 
+function fibArray(n) {
+  arr.push(n <= 2 ? 1 : fibonacci(n - 1) + fibonacci(n - 2))
+  return arr
+};
+
+for (let i = 1 ; i < 20; i++) { 
+  fibArray(i)
   console.log(fibonacci(i))
 }
+console.log(arr)
 
 function foo1 (x,y,z,...args) {
   return [x, ...args]
