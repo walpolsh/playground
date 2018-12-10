@@ -11,6 +11,15 @@ function foo (x = 1, ...args) {
   return bar(...args) + x
 }
 
+function fibonacci(n) {
+  return n <= 2 ? 1 : fibonacci(n - 1) + fibonacci(n - 2)
+};
+
+for (let i = 1 ; i < 20; i++) {
+
+  console.log(fibonacci(i))
+}
+
 function foo1 (x,y,z,...args) {
   return [x, ...args]
 }
@@ -41,14 +50,13 @@ const bubbleSort = nums => {
 
 console.log(bubbleSort(nums))
 
-
-
-
 const Playground = (props) => <div>
   <div>{foo(5)}</div>
   <div>{foo()}</div>
   <div>{[].concat(x,y,[6])}</div>
-  <div>{[...x, ...y, [6]]}</div>
+  <div>{
+    [...x, ...y, [6]]
+  }</div>
   <div>
     {
       bar1().join('') === '281012' ? 'true' : 'false'
